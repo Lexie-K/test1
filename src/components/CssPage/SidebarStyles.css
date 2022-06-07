@@ -1,5 +1,6 @@
+/* Используй rem */
 .aside_homepage {
-  max-width: 350px;
+  max-width: 35rem;
   flex: 1;
   background-color: rgb(241, 245, 16);          
 }

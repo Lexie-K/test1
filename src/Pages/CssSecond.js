@@ -5,15 +5,13 @@ import Footer from "../components/CssPage/Footer";
 import Sections from "../components/CssPage/Sections";
 import  '../components/CssPage/mainCss.css';
 
-const CssSecond = () => {
-  return (
+const CssSecond = () => (
   <div className="view">
     <Navbar />
     <Sidebar />
     <Sections /> 
     <Footer />
   </div>  
-  );  
-}
+);  
 
-export default CssSecond;
+export default CssSecond

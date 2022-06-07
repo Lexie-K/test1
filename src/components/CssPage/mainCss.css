@@ -19,10 +19,11 @@ body {
   min-height: 100vh;  
 }
 
+/* Вынести в отдельный файл */
 .footer_homepage {
   flex-basis: 100%;
   background-color: rgb(131, 15, 131);    
- }
+}
 
 
 

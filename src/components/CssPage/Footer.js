@@ -1,13 +1,11 @@
 import React from 'react';
 import  '../CssPage/mainCss.css';
 
+const Footer = () => (
+  <footer className="footer_homepage">
+    <p>Footer</p>
+  </footer>
+);
 
-const Footer = () => {
-  return (
-    <footer className="footer_homepage">
-      <p>Footer</p>
-    </footer>
-  );
-};
 
-export default Footer;
+export default Footer

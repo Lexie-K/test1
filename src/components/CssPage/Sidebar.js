@@ -1,12 +1,10 @@
 import React from "react";
 import './SidebarStyles.css'
 
-function Sidebar() {
-  return (
+const Sidebar = () => (
   <aside className="aside_homepage">
     <p>Sidebar</p>
   </aside>
- );
-}
+)
 
-export default Sidebar;
+export default Sidebar

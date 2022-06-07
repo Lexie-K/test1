@@ -1,0 +1,5 @@
+.aside_homepage {
+  max-width: 350px;
+  flex: 1;
+  background-color: rgb(241, 245, 16);          
+}

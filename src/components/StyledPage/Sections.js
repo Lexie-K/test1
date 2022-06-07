@@ -1,35 +1,34 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-const CenterViewStyle = styled.main`
+const CenterViewStyled = styled.main`
+  min-height: 80vh;
+
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 1rem;
-  min-height: 80vh;
   flex: 1;
-`;
-const Content1Style = styled.section`
-  background-color: rgb(32, 128, 32);
-  flex-grow: 6;
-`;
-const Content2Style = styled.section`
-  background-color: rgb(78, 190, 255);
-  flex-grow: 10;
-`;
-const LastContentStyle = styled.section`
-  background-color: #ffc0cb;
-  flex: 1 0 100%;
+
+  gap: 1rem;
 `;
 
-function Sections() {
-  return (
-    <CenterViewStyle>
-      <Content1Style>Content 1</Content1Style>
-      <Content2Style>Content 2</Content2Style>
-      <LastContentStyle>Content 3</LastContentStyle>
-    </CenterViewStyle>
-  );
-}
+// До вопросика - if
+// Между вопросиком и двоеточием - если true
+// После двоеточия - если false
+const Content = styled.section`
+  background-color: ${({ color }) => color ? color : 'black'};
+  flex-grow: ${({ grow }) => grow ? grow : 1};
+  flex: ${({ grow }) => grow ? '' : '1 0 100%'};
+`;
+
+const Sections = () => (
+  <CenterViewStyled>
+    <Content color={'red'} grow={'6'}>Content 1</Content>
+
+    <Content color={'blue'} grow={'10'}>Content 2</Content>
+
+    <Content color={'pink'}>Content 3</Content>
+  </CenterViewStyled>
+);
 
 export default Sections;

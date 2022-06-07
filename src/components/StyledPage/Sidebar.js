@@ -1,16 +1,17 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 const SidebarStyle = styled.aside`
-  min-width: 300px;
+  // use rem
+  min-width: 30rem;
   background-color: rgb(241, 245, 16);         
 `
 
-const Sidebar = () => {
-  return (
-  <SidebarStyle>Sidebar</SidebarStyle>
- );
-}
+const Sidebar = () => (
+  <SidebarStyle>
+    Sidebar
+  </SidebarStyle>
+);
 
 export default Sidebar;
 

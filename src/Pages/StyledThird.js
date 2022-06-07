@@ -7,39 +7,38 @@ import Sidebar from "../components/StyledPage/Sidebar";
 import {createGlobalStyle} from 'styled-components';
 
 const Global = createGlobalStyle`
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box; 
-     
-}
-body {
-  min-height: 100vh;
-  font-family: 'Outfit', sans-serif;
-}
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body {
+    min-height: 100vh;
+    font-family: 'Outfit', sans-serif;
+  }
 `
 
-const View = styled.div `
+const View = styled.div`
+  min-height: 100vh;
 
   display: flex;
   flex-direction: row;
   flex-wrap: wrap; 
-  gap: 1rem; 
-  min-Height: 100vh;
-  flex:  1 0;
+  flex: 1 0;
+
+  gap: 1rem;   
 `
 
 const StyledThird = () => {
   return (
     <Fragment>
-    <Global /> 
-       <View>
+      <Global /> 
+      <View>
         <Navbar />
-      <Sidebar />
-      <Sections /> 
-      <Footer />
-    </View>  
-   
+        <Sidebar />
+        <Sections /> 
+        <Footer />
+      </View>     
     </Fragment>   
   );  
 }

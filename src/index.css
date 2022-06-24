@@ -1,0 +1,31 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600;700;800&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;  
+}
+
+body {
+  font-family: 'Outfit', sans-serif;  
+  min-height: 100vh;  
+}
+
+.successful_title {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #ff14bd;
+  margin: 15rem;
+  text-align: center;
+  text-shadow: 0 0 .5em #ff14bd;
+}
+
+.linkStyled {
+  display: flex;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+
+
+

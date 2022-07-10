@@ -1,22 +1,18 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import '../index.css'
-import { Link } from 'react-router-dom';
 
 const SuccessfulForm = () => {
-  return (
-    <>
-      <p className='successful_title'> Välkommen! </p> 
-      <div className='linkStyled'> 
-        <Link to ='/'>Back to Form</Link>
-        <br/>
-        <Link to ='/localstorage_page'>Back to LocalStorage Form</Link>
-        <br/>
-        <Link to ='/cookie_page'>Back to Cookie Form</Link>
-        <br/>
-        <Link to ='/sessionstorage_page'>Back to SessonStorage Form</Link>
-      </div>  
-    </>
-    );
+  
+  const name = useSelector(state => state.loginInfo.username);
+  const auth =useSelector(state => state.loginInfo.isAuth);
+  
+  if (auth) {
+    return (   
+      <p className='successful_title'>Välkommen {name}!</p> 
+    )
+  }
 }
+
 
 export default SuccessfulForm;

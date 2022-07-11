@@ -1,7 +1,31 @@
-import { createStore } from "redux"
-import rootReducer from "./combine"
+import { createStore, applyMiddleware } from "redux"
+import * as Auth from './auth'
+import { combineReducers } from 'redux'
+import thunkMiddleware from 'redux-thunk'
+import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly'
 
-  const store = createStore(rootReducer,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const defaultState = {
+  auth: Auth.defaultState
+}
+
+const appReducer = combineReducers({
+  auth: Auth.reducer,
+})
+
+const rootReducer = (state, action) => {
+  if (action.type === 'EXIT') {
+    state = defaultState
+    window.location = '/'
+  }
   
-export default store;
+	return appReducer(state, action)
+}
+
+export const makeStore = (initialState = defaultState) => {
+  const store = createStore(
+    rootReducer,
+    initialState,
+    composeWithDevTools(applyMiddleware(thunkMiddleware)),
+  )
+  return { store }
+}

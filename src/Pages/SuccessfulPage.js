@@ -1,17 +1,29 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useLayoutEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { exit } from '../Store/auth/reducer';
 import '../index.css'
 
 const SuccessfulForm = () => {
-  
-  const name = useSelector(state => state.loginInfo.username);
-  const auth =useSelector(state => state.loginInfo.isAuth);
-  
-  if (auth) {
-    return (   
-      <p className='successful_title'>Välkommen {name}!</p> 
-    )
+  const { username, isAuth } = useSelector(({ auth }) => auth);
+
+  const dispatch = useDispatch()
+
+  useLayoutEffect(() => {
+    if (!isAuth) {
+      handleExit()
+    }
+  }, [isAuth])
+
+  const handleExit = () => {
+    dispatch(exit())
   }
+  
+  return (   
+    <>
+      <p className='successful_title'>Välkommen {username}!</p>
+      <button onClick={handleExit}>Выйти</button>
+    </>
+  )
 }
 
 

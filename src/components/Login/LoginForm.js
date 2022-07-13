@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
-import './Login.css'
 import { login } from '../../Store/auth/reducer'
 
 
@@ -15,13 +14,13 @@ const LoginForm = () => {
   
   const navigate = useNavigate();
 
-  useEffect(() => {
-    isAuth ? navigate('/success_page') : navigate('/');
+  useEffect (() => {
+    isAuth ? navigate('/loginchange_page') : navigate('/');
   }, [isAuth, navigate])
     
   const handleFormSubmit = (e) => {
     e.preventDefault(); 
-    dispatch(login(localUsername, localPassword))
+    dispatch(login(localUsername, localPassword));     
   } 
                           
   return (
@@ -40,7 +39,9 @@ const LoginForm = () => {
               <input className="input-form" type="password" name="password" value={localPassword} onChange={(e)=> setPassword(e.target.value)} />  
             </div>  
            
-            <input className="submit-btn"  type="submit" value="LOGIN" />
+            <div className='btn-container'>
+              <input className="submit-btn"  type="submit" value="LOGIN" />
+            </div>
         </div> 
       </div>
     </form>  

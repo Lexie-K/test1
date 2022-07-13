@@ -12,13 +12,14 @@
 
 .container {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   
   background-color: var(--darkest);
   
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .form-inner {
@@ -43,9 +44,15 @@
 .form-group {
   padding-bottom: 2rem;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: var(--light);  
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
 }
 
 .submit-btn {
@@ -62,8 +69,8 @@
   border-radius: 1rem;
   font-size: 1rem;
   font-weight: 500;
-  padding: 1rem 2rem;  
-  margin-left: 4rem;  
+  padding: 1rem 2rem; 
+  
 }
 
 .submit-btn:hover {
@@ -80,7 +87,7 @@
   
   border-radius: 15px;
   margin: .5rem;
-  font-size: .8rem;
+  font-size: 1rem;
   
   background: var(--light); 
   box-shadow: 0 0 1em #ff14bd;
@@ -96,3 +103,4 @@
   font-weight: 500;
   text-align: center;  
 }
+
